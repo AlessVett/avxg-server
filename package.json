@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-serve":"nodemon index.js",
+    "dev-serve": "nodemon index.js",
     "serve": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +14,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "node-pre-gyp": "^0.17.0",
     "nodemon": "^2.0.22",
     "simple-peer": "^9.11.1",
-    "socket.io": "^4.6.1"
+    "socket.io": "^4.6.1",
+    "wrtc": "^0.4.7"
   }
 }

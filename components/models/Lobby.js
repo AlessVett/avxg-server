@@ -1,5 +1,6 @@
 const crypto = require('crypto'),
-    SimplePeer = require('simple-peer');
+    SimplePeer = require('simple-peer'),
+    webrtc = require('wrtc');
 require('dotenv').config();
 
 class Lobby {
@@ -46,7 +47,8 @@ class Lobby {
 
         this.entities.slice(0, -1).forEach((entity) => {
             const peerConnection = new SimplePeer({
-                initiator: true
+                initiator: true,
+                wrtc: webrtc
             });
 
             peerConnection.on('signal', (data) => {
@@ -75,7 +77,8 @@ class Lobby {
 
         const entity = this.entities.find((entity) => entity.getSocket().peerId === peerId);
         const receiverConnection = new SimplePeer({
-            initiator: false
+            initiator: false,
+            wrtc: webrtc
         });
 
         receiverConnection.on('signal', (data) => {
